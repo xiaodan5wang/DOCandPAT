@@ -10,6 +10,7 @@
 
 @interface DoctorRegisterViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameDoc_textfield;
+@property (weak, nonatomic) IBOutlet UITextField *mobileDoc_textfield;
 
 @property (weak, nonatomic) IBOutlet UITextField *pswDoc_textfield;
 @property (weak, nonatomic) IBOutlet UITextField *specializationDoc_textfield;
