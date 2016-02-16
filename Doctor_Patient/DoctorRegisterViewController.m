@@ -64,6 +64,9 @@ static bool imageIsGood=false;
     [qualificationDoc_textfield addSubview:buttonQualification];
    
     
+    
+    
+    NSLog(@"XD sb");
     // Do any additional setup after loading the view.
     
      avaliableDateStr=@"";
