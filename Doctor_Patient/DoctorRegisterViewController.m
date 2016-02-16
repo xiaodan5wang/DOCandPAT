@@ -23,24 +23,24 @@
 @implementation DoctorRegisterViewController
 @synthesize nameDoc_textfield,mobileDoc_textfield,pswDoc_textfield,specializationDoc_textfield,qualificationDoc_textfield,emailDoc_textfield,addressDoc_textfield,hospitalDoc_textfield,monPress,tuePress,wedPress,thuPress,friPress,morningSlotPress,eveningSlotPress,imageViewDoc;
 //making flags for registration validation including buttons for available date and time
-static bool nameIsGood=false;
-static bool mobileIsGood = false;
-static bool passwordIsGood=false;
-static bool specializationIsGood=false;
-static bool qulificationIsGood=false;
-static bool emailIsGood=false;
-static bool addressIsGood=false;
-static bool hospitalIsGood=false;
-static bool availableDateIsGood=false;
-static bool MON=false;
-static bool TUE=false;
-static bool WED=false;
-static bool THU=false;
-static bool FRI=false;
-static bool availableTimeIsGood=false;
-static bool MORNING=false;
-static bool AFTERNOON=false;
-static bool imageIsGood=false;
+    static bool nameIsGood=false;
+    static bool mobileIsGood = false;
+    static bool passwordIsGood=false;
+    static bool specializationIsGood=false;
+    static bool qulificationIsGood=false;
+    static bool emailIsGood=false;
+    static bool addressIsGood=false;
+    static bool hospitalIsGood=false;
+    static bool availableDateIsGood=false;
+    static bool MON=false;
+    static bool TUE=false;
+    static bool WED=false;
+    static bool THU=false;
+    static bool FRI=false;
+    static bool availableTimeIsGood=false;
+    static bool MORNING=false;
+    static bool AFTERNOON=false;
+    static bool imageIsGood=false;
 
 
 - (void)viewDidLoad {
@@ -64,10 +64,7 @@ static bool imageIsGood=false;
     buttonQualification.frame = CGRectMake(0, 0, 183.0, 30.0);
     [qualificationDoc_textfield addSubview:buttonQualification];
    
-<<<<<<< HEAD
-=======
     NSLog(@"xd sb");
->>>>>>> f92429b652c6c9ec6e2fcbec904aadb5b42fa88b
     // Do any additional setup after loading the view.
     
      avaliableDateStr=@"";
