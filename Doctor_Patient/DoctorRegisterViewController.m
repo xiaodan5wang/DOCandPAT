@@ -21,9 +21,10 @@
 @end
 
 @implementation DoctorRegisterViewController
-@synthesize nameDoc_textfield,pswDoc_textfield,specializationDoc_textfield,qualificationDoc_textfield,emailDoc_textfield,addressDoc_textfield,hospitalDoc_textfield,monPress,tuePress,wedPress,thuPress,friPress,morningSlotPress,eveningSlotPress,imageViewDoc;
+@synthesize nameDoc_textfield,mobileDoc_textfield,pswDoc_textfield,specializationDoc_textfield,qualificationDoc_textfield,emailDoc_textfield,addressDoc_textfield,hospitalDoc_textfield,monPress,tuePress,wedPress,thuPress,friPress,morningSlotPress,eveningSlotPress,imageViewDoc;
 //making flags for registration validation including buttons for available date and time
 static bool nameIsGood=false;
+static bool mobileIsGood = false;
 static bool passwordIsGood=false;
 static bool specializationIsGood=false;
 static bool qulificationIsGood=false;
@@ -63,6 +64,10 @@ static bool imageIsGood=false;
     buttonQualification.frame = CGRectMake(0, 0, 183.0, 30.0);
     [qualificationDoc_textfield addSubview:buttonQualification];
    
+<<<<<<< HEAD
+=======
+    NSLog(@"xd sb");
+>>>>>>> f92429b652c6c9ec6e2fcbec904aadb5b42fa88b
     // Do any additional setup after loading the view.
     
      avaliableDateStr=@"";
@@ -280,6 +285,7 @@ static bool imageIsGood=false;
 
 - (void)registrationValidation{
     if(nameDoc_textfield.text.length>0) nameIsGood=true;
+    if(mobileDoc_textfield.text.length>0) mobileIsGood = true;
     if(pswDoc_textfield.text.length>0) passwordIsGood=true;
     if(specializationDoc_textfield.text.length>0) specializationIsGood=true;
     if(qualificationDoc_textfield.text.length>0) qulificationIsGood=true;
@@ -294,6 +300,7 @@ static bool imageIsGood=false;
 
 - (IBAction)submit:(id)sender {
      nameIsGood=false;
+     mobileIsGood = false;
      passwordIsGood=false;
      specializationIsGood=false;
      qulificationIsGood=false;
@@ -305,7 +312,7 @@ static bool imageIsGood=false;
      imageIsGood=false;
     
     [self registrationValidation];
-    if (nameIsGood&&passwordIsGood&&specializationIsGood&&qulificationIsGood&&emailIsGood&&addressIsGood&&hospitalIsGood&&availableDateIsGood&&availableTimeIsGood&&imageIsGood) {
+    if (nameIsGood&&mobileIsGood&&passwordIsGood&&specializationIsGood&&qulificationIsGood&&emailIsGood&&addressIsGood&&hospitalIsGood&&availableDateIsGood&&availableTimeIsGood&&imageIsGood) {
         UIAlertController * sucessAlert = [UIAlertController alertControllerWithTitle:@"Success" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             

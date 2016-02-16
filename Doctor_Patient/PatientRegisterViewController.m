@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
 
+=======
+>>>>>>> f92429b652c6c9ec6e2fcbec904aadb5b42fa88b
     // Do any additional setup after loading the view.
 }
 
