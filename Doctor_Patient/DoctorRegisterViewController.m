@@ -268,6 +268,7 @@ static bool imageIsGood=false;
     
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
+    picker.allowsEditing = YES;
     picker.navigationBar.barStyle = UIBarStyleBlack;
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -279,7 +280,7 @@ static bool imageIsGood=false;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    UIImage *img = info[UIImagePickerControllerOriginalImage];
+    UIImage *img = info[UIImagePickerControllerEditedImage];
     [imageViewDoc setImage:img];
     imgData = UIImagePNGRepresentation(img);
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -297,9 +298,9 @@ static bool imageIsGood=false;
     if(avaliableDateStr.length>0){
         availableDateArray = [avaliableDateStr componentsSeparatedByString:@","];
         NSLog(@"%@",availableDateArray);
-        NSLog(@"11111%@",availableDateArray[0]);
-        NSLog(@"22222%@",availableDateArray[1]);
-        NSLog(@"33333%@",availableDateArray[2]);
+//        NSLog(@"11111%@",availableDateArray[0]);
+//        NSLog(@"22222%@",availableDateArray[1]);
+//        NSLog(@"33333%@",availableDateArray[2]);
         availableDateIsGood=true;
     }
     if(avaliableTimeStr.length>0) {
@@ -326,12 +327,13 @@ static bool imageIsGood=false;
     
     [self registrationValidation];
     if (nameIsGood&&mobileIsGood&&passwordIsGood&&specializationIsGood&&qulificationIsGood&&emailIsGood&&addressIsGood&&hospitalIsGood&&availableDateIsGood&&availableTimeIsGood&&imageIsGood) {
-        UIAlertController * sucessAlert = [UIAlertController alertControllerWithTitle:@"Success" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction * actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        [sucessAlert addAction:actionOK];
-        [self presentViewController:sucessAlert animated:YES completion:nil];
+//        UIAlertController * sucessAlert = [UIAlertController alertControllerWithTitle:@"Success" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction * actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            
+//        }];
+//        [sucessAlert addAction:actionOK];
+//        [self presentViewController:sucessAlert animated:YES completion:nil];
+        NSLog(@"Succees");
     }
     
     
@@ -351,8 +353,19 @@ static bool imageIsGood=false;
                          //imgData,@"Image"
                          nil];
     
+    PFFile *file = [PFFile fileWithData:imgData];
+    [testObject setObject:file forKey:@"Image"];
     [testObject setValuesForKeysWithDictionary:dic];
     
-    [testObject saveInBackground];
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded){
+            UIAlertController * sucessAlert = [UIAlertController alertControllerWithTitle:@"Success" message:@"update success" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction * actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [sucessAlert addAction:actionOK];
+            [self presentViewController:sucessAlert animated:YES completion:nil];
+        }
+    }];
 }
 @end

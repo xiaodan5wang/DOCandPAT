@@ -1,18 +1,18 @@
 //
-//  SelectedCategoryViewController.m
+//  PatientLoginViewController.m
 //  Doctor_Patient
 //
-//  Created by Xiaodan Wang on 2/16/16.
-//  Copyright © 2016 钱骏. All rights reserved.
+//  Created by 钱骏 on 16/2/15.
+//  Copyright © 2016年 钱骏. All rights reserved.
 //
 
-#import "SelectedCategoryViewController.h"
+#import "PatientLoginViewController.h"
 
-@interface SelectedCategoryViewController ()
+@interface PatientLoginViewController ()
 
 @end
 
-@implementation SelectedCategoryViewController
+@implementation PatientLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface DoctorRegisterViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameDoc_textfield;
 @property (weak, nonatomic) IBOutlet UITextField *mobileDoc_textfield;

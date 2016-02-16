@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		6B99C1A51C72EBB500A6CA93 /* CustCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B99C1A41C72EBB500A6CA93 /* CustCollectionViewCell.m */; };
-		6B99C1A81C72F69900A6CA93 /* PatientSelectDocTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B99C1A71C72F69900A6CA93 /* PatientSelectDocTableViewController.m */; };
-=======
 		044C8520289BA1FDE34C1A9F /* libPods-Doctor_Patient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF381B997969305CA963E70 /* libPods-Doctor_Patient.a */; };
->>>>>>> 4977c2c57e5da20fc47b0d6576bdd6bb691bbb11
 		6C96AF761C7262AE007B4B58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C96AF751C7262AE007B4B58 /* main.m */; };
 		6C96AF791C7262AE007B4B58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C96AF781C7262AE007B4B58 /* AppDelegate.m */; };
 		6C96AF7C1C7262AE007B4B58 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C96AF7B1C7262AE007B4B58 /* ViewController.m */; };
@@ -37,14 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		6B99C1A31C72EBB500A6CA93 /* CustCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustCollectionViewCell.h; sourceTree = "<group>"; };
-		6B99C1A41C72EBB500A6CA93 /* CustCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustCollectionViewCell.m; sourceTree = "<group>"; };
-		6B99C1A61C72F69900A6CA93 /* PatientSelectDocTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientSelectDocTableViewController.h; sourceTree = "<group>"; };
-		6B99C1A71C72F69900A6CA93 /* PatientSelectDocTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientSelectDocTableViewController.m; sourceTree = "<group>"; };
-=======
 		61D6296BC5B2727DDDA177A3 /* Pods-Doctor_Patient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doctor_Patient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doctor_Patient/Pods-Doctor_Patient.debug.xcconfig"; sourceTree = "<group>"; };
->>>>>>> 4977c2c57e5da20fc47b0d6576bdd6bb691bbb11
 		6C96AF711C7262AE007B4B58 /* Doctor_Patient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doctor_Patient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C96AF751C7262AE007B4B58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C96AF771C7262AE007B4B58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,10 +120,6 @@
 				6C96AFAC1C7282E3007B4B58 /* DoctorLoginViewController.m */,
 				6C96AFA21C726DE2007B4B58 /* PatientLoginViewController.h */,
 				6C96AFA31C726DE2007B4B58 /* PatientLoginViewController.m */,
-				6B99C1A61C72F69900A6CA93 /* PatientSelectDocTableViewController.h */,
-				6B99C1A71C72F69900A6CA93 /* PatientSelectDocTableViewController.m */,
-				6B99C1A31C72EBB500A6CA93 /* CustCollectionViewCell.h */,
-				6B99C1A41C72EBB500A6CA93 /* CustCollectionViewCell.m */,
 			);
 			name = ViewAfterLogin;
 			path = Doctor_Patient;
@@ -355,8 +339,6 @@
 				6C96AF7C1C7262AE007B4B58 /* ViewController.m in Sources */,
 				6C96AFB01C728310007B4B58 /* DoctorRegisterViewController.m in Sources */,
 				6C96AFAD1C7282E3007B4B58 /* DoctorLoginViewController.m in Sources */,
-				6B99C1A51C72EBB500A6CA93 /* CustCollectionViewCell.m in Sources */,
-				6B99C1A81C72F69900A6CA93 /* PatientSelectDocTableViewController.m in Sources */,
 				6C96AFAA1C728026007B4B58 /* DoctorViewController.m in Sources */,
 				6C96AF791C7262AE007B4B58 /* AppDelegate.m in Sources */,
 				6C96AFA01C726A29007B4B58 /* PatientViewController.m in Sources */,

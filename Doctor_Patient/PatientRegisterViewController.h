@@ -10,4 +10,14 @@
 
 @interface PatientRegisterViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *namePat_textfield;
+
+@property (weak, nonatomic) IBOutlet UITextField *passPat_textfield;
+
+@property (weak, nonatomic) IBOutlet UITextField *mobilePat_textfield;
+@property (weak, nonatomic) IBOutlet UITextField *emailPat_textfield;
+
+- (IBAction)confirmPat_tap:(id)sender;
+
+
 @end
