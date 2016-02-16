@@ -1,23 +1,21 @@
 //
-//  PatientSelectDoctorViewController.m
+//  SelectedCategoryViewController.m
 //  Doctor_Patient
 //
 //  Created by Xiaodan Wang on 2/16/16.
 //  Copyright © 2016 钱骏. All rights reserved.
 //
 
-#import "PatientSelectDoctorViewController.h"
+#import "SelectedCategoryViewController.h"
 
-@interface PatientSelectDoctorViewController ()
+@interface SelectedCategoryViewController ()
 
 @end
 
-@implementation PatientSelectDoctorViewController
-@synthesize selectedCategory;
+@implementation SelectedCategoryViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=selectedCategory;
-
     // Do any additional setup after loading the view.
 }
 
