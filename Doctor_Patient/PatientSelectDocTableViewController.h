@@ -10,4 +10,6 @@
 
 @interface PatientSelectDocTableViewController : UIViewController
 
+@property (nonatomic) NSString * selectedCategory;
+
 @end

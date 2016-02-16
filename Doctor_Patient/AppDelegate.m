@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     sleep(0.5);
+    _categoryArray= @[@"Dentist",@"Gynecologist",@"Dermatologist",@"Homeopathy",@"Ayurveda",@"Cardiologist"];
+
     return YES;
 }
 

@@ -13,9 +13,11 @@
 @end
 
 @implementation PatientSelectDocTableViewController
+@synthesize selectedCategory;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=selectedCategory;
     // Do any additional setup after loading the view.
 }
 

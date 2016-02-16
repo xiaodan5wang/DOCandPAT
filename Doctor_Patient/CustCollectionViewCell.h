@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustCollectionViewCell : UICollectionViewCell
+@interface CustCollectionViewCell : UICollectionViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *labelCategory;
+
 
 @end
