@@ -18,8 +18,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     sleep(0.5);
+<<<<<<< HEAD
     _categoryArray= @[@"Dentist",@"Gynecologist",@"Dermatologist",@"Homeopathy",@"Ayurveda",@"Cardiologist"];
 
+=======
+    [Parse setApplicationId:@"m84xahZ5c0K2O1S3jAK8rFnY8S21A93q2XTO19B2"
+                  clientKey:@"ajl1jXskBHNYdFByFgCDgtjPsaNWUVRwaiafOHGy"];
+>>>>>>> 4977c2c57e5da20fc47b0d6576bdd6bb691bbb11
     return YES;
 }
 
