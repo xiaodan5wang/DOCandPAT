@@ -15,6 +15,8 @@
     NSData *imgData;
     NSString *avaliableDateStr;
     NSString *avaliableTimeStr;
+    NSArray *availableDateArray;
+    NSArray *availableTimeArray;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -23,24 +25,24 @@
 @implementation DoctorRegisterViewController
 @synthesize nameDoc_textfield,mobileDoc_textfield,pswDoc_textfield,specializationDoc_textfield,qualificationDoc_textfield,emailDoc_textfield,addressDoc_textfield,hospitalDoc_textfield,monPress,tuePress,wedPress,thuPress,friPress,morningSlotPress,eveningSlotPress,imageViewDoc;
 //making flags for registration validation including buttons for available date and time
-    static bool nameIsGood=false;
-    static bool mobileIsGood = false;
-    static bool passwordIsGood=false;
-    static bool specializationIsGood=false;
-    static bool qulificationIsGood=false;
-    static bool emailIsGood=false;
-    static bool addressIsGood=false;
-    static bool hospitalIsGood=false;
-    static bool availableDateIsGood=false;
-    static bool MON=false;
-    static bool TUE=false;
-    static bool WED=false;
-    static bool THU=false;
-    static bool FRI=false;
-    static bool availableTimeIsGood=false;
-    static bool MORNING=false;
-    static bool AFTERNOON=false;
-    static bool imageIsGood=false;
+static bool nameIsGood=false;
+static bool mobileIsGood = false;
+static bool passwordIsGood=false;
+static bool specializationIsGood=false;
+static bool qulificationIsGood=false;
+static bool emailIsGood=false;
+static bool addressIsGood=false;
+static bool hospitalIsGood=false;
+static bool availableDateIsGood=false;
+static bool MON=false;
+static bool TUE=false;
+static bool WED=false;
+static bool THU=false;
+static bool FRI=false;
+static bool availableTimeIsGood=false;
+static bool MORNING=false;
+static bool AFTERNOON=false;
+static bool imageIsGood=false;
 
 
 - (void)viewDidLoad {
@@ -69,6 +71,9 @@
     
      avaliableDateStr=@"";
      avaliableTimeStr=@"";
+    
+    availableDateArray = [NSArray array];
+    availableTimeArray = [NSArray array];
     
     //action sheet for speciliast
 //    [self showQualification];
@@ -153,7 +158,7 @@
 */
 
 - (IBAction)MonBut_press:(id)sender {
-    NSString * str=@"MON,";
+    NSString * str=@"Mon,";
     if (MON!=true) {
         avaliableDateStr=[avaliableDateStr stringByAppendingString:str];
         monPress.backgroundColor=[UIColor greenColor];
@@ -169,7 +174,7 @@
 }
 
 - (IBAction)TueBut_press:(id)sender {
-    NSString * str=@"TUE,";
+    NSString * str=@"Tue,";
     if (TUE!=true) {
         avaliableDateStr=[avaliableDateStr stringByAppendingString:str];
         tuePress.backgroundColor=[UIColor greenColor];
@@ -184,7 +189,7 @@
 }
 
 - (IBAction)WedBut_press:(id)sender {
-    NSString * str=@"WED,";
+    NSString * str=@"Wed,";
     if (WED!=true) {
         avaliableDateStr=[avaliableDateStr stringByAppendingString:str];
         wedPress.backgroundColor=[UIColor greenColor];
@@ -199,7 +204,7 @@
 }
 
 - (IBAction)ThuBut_press:(id)sender {
-    NSString * str=@"THU,";
+    NSString * str=@"Thu,";
     if (THU!=true) {
         avaliableDateStr=[avaliableDateStr stringByAppendingString:str];
         thuPress.backgroundColor=[UIColor greenColor];
@@ -215,7 +220,7 @@
 }
 
 - (IBAction)FriBut_press:(id)sender {
-    NSString * str=@"FRI,";
+    NSString * str=@"Fri,";
     if (FRI!=true) {
         avaliableDateStr=[avaliableDateStr stringByAppendingString:str];
         friPress.backgroundColor=[UIColor greenColor];
@@ -289,8 +294,19 @@
     if(emailDoc_textfield.text.length>0) emailIsGood=true;
     if(addressDoc_textfield.text.length>0) addressIsGood=true;
     if(hospitalDoc_textfield.text.length>0) hospitalIsGood=true;
-    if(avaliableDateStr.length>0) availableDateIsGood=true;
-    if(avaliableTimeStr.length>0) availableTimeIsGood=true;
+    if(avaliableDateStr.length>0){
+        availableDateArray = [avaliableDateStr componentsSeparatedByString:@","];
+        NSLog(@"%@",availableDateArray);
+        NSLog(@"11111%@",availableDateArray[0]);
+        NSLog(@"22222%@",availableDateArray[1]);
+        NSLog(@"33333%@",availableDateArray[2]);
+        availableDateIsGood=true;
+    }
+    if(avaliableTimeStr.length>0) {
+//        availableTimeArray = [avaliableTimeStr componentsSeparatedByString:@","];
+//        NSLog(@"%@",availableTimeArray);
+        availableTimeIsGood=true;
+    }
     if(imgData.length>0) imageIsGood=true;
 }
 
@@ -317,5 +333,26 @@
         [sucessAlert addAction:actionOK];
         [self presentViewController:sucessAlert animated:YES completion:nil];
     }
+    
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"Doctors"];
+    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                         nameDoc_textfield.text,  @"Name",
+                         mobileDoc_textfield.text,    @"Mobile",
+                         pswDoc_textfield.text, @"Password",
+                         emailDoc_textfield.text,@"EmailAddress",
+                         specializationDoc_textfield.text,@"Specialization",
+                         qualificationDoc_textfield.text,@"Qualification",
+                         hospitalDoc_textfield.text,@"Hospital",
+                         addressDoc_textfield.text,@"Address",
+                         availableDateArray,@"AvailableDate",
+                         avaliableTimeStr,@"AvailableTime",
+                         //imgData,@"Image"
+                         nil];
+    
+    [testObject setValuesForKeysWithDictionary:dic];
+    
+    [testObject saveInBackground];
 }
 @end
