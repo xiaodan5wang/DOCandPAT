@@ -1,5 +1,5 @@
 //
-//  PatientSelectDocTableViewController.h
+//  PatientSelectDoctorViewController.h
 //  Doctor_Patient
 //
 //  Created by Xiaodan Wang on 2/16/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PatientSelectDocTableViewController : UIViewController
+@interface PatientSelectDoctorViewController : UIViewController
 
 @property (nonatomic) NSString * selectedCategory;
 

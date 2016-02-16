@@ -1,30 +1,30 @@
 //
-//  PatientLoginViewController.m
+//  PatientAfterLoginViewController.m
 //  Doctor_Patient
 //
-//  Created by 钱骏 on 16/2/15.
-//  Copyright © 2016年 钱骏. All rights reserved.
+//  Created by Xiaodan Wang on 2/16/16.
+//  Copyright © 2016 钱骏. All rights reserved.
 //
 
-#import "PatientLoginViewController.h"
+#import "PatientAfterLoginViewController.h"
 #import "CustCollectionViewCell.h"
-#import "PatientSelectDocTableViewController.h"
+#import "PatientSelectDoctorViewController.h"
 #import "AppDelegate.h"
 
-@interface PatientLoginViewController (){
+@interface PatientAfterLoginViewController (){
     AppDelegate * localDelegate;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *categoryCollectionView;
 
 @end
 
-@implementation PatientLoginViewController
+@implementation PatientAfterLoginViewController
 @synthesize categoryCollectionView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.categoryCollectionView.backgroundColor=[UIColor clearColor];
     localDelegate = [[UIApplication sharedApplication]delegate];
-
+    
     // Do any additional setup after loading the view.
     
 }
@@ -49,7 +49,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    PatientSelectDocTableViewController * psdtVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PatientSelectDocTableViewController"];
+    PatientSelectDoctorViewController * psdtVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PatientSelectDocTableViewController"];
     [self.navigationController pushViewController:psdtVC animated:YES];
     psdtVC.selectedCategory= localDelegate.categoryArray[indexPath.row];
 }
